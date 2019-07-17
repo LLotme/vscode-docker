@@ -3,7 +3,7 @@
 Make sure you are signed in to the Docker Hub or Azure container registry from the docker CLI via `docker login` (using your username, not your e-mail address).
 
 If you are using an Azure container registry, you will need to get the username and password from Azure by right-clicking on the Azure container registry in the extension and selecting "Browse in the Azure Portal", then selecting the "Access Keys" tab.
-![Getting Azure username and password](https://raw.githubusercontent.com/microsoft/vscode-docker/master/images/AzureUsernamePassword.png)
+![AzureUsernamePassword](https://user-images.githubusercontent.com/11282622/61395920-64607e80-a87b-11e9-9da6-de6dd7d0aca9.png)
 
 Finally, execute `docker login`, for example:
 
