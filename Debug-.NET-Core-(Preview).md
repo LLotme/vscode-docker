@@ -8,7 +8,7 @@
 
 1. (Mac users) add `/usr/local/share/dotnet/sdk/NuGetFallbackFolder` as a shared folder in your Docker preferences.
 
-![Docker Shared Folders](https://raw.githubusercontent.com/microsoft/vscode-docker/master/images/dockerSharedFolders.png)
+![dockerSharedFolders](https://user-images.githubusercontent.com/11282622/61395817-311def80-a87b-11e9-9d9a-ebbd4f374db5.png)
 
 ### Starting the Debugger
 
