@@ -39,7 +39,8 @@ Most properties of the configuration are optional and will be inferred from the 
             },
             "dockerRun": {
                 // Container customizations
-            }
+            },
+            "configureAspNetCoreSsl": true
         }
     ]
 }
@@ -129,7 +130,12 @@ Customize the Docker container run process by adding properties under the `docke
 | `containerPath` | Path where the volume will be mapped within the container. The folder will be created if it does not exist. | Yes | None |
 | `permissions` | Permissions for the container for the mapped volume, `rw` for read-write or `ro` for read-only. | Yes | `rw` |
 
-Example run customization:
+### Other Customization
+| Property | Description | Required | Default |
+| --- | --- | --- | --- |
+| `configureAspNetCoreSsl` | Whether or not to configure the ASP.NET Core HTTPS development certificate and relevant settings. | No | Inferred from application |
+
+### Example run customization:
 
 ```json
 {
@@ -193,8 +199,14 @@ Example run customization:
                         "permissions": "ro|rw"
                     }
                 ]
-            }
+            },
+            "configureAspNetCoreSsl": true
         }
     ]
 }
 ```
+
+### Note about ASP.NET Core HTTPS development certificate
+For debugging, ASP.NET Core uses a self-signed certificate for HTTPS support. By default, this certificate is not trusted by your operating system or browser, so warnings may be shown in your browser when accessing the site.
+
+On Windows and Mac, you will be prompted about this if the certificate is not trusted. You can trust the certificate by running `dotnet dev-certs https --trust`. On Linux, refer to your distribution-specific documentation. You can learn more here: https://aka.ms/vscode-docker-dev-certs
