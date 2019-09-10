@@ -1,6 +1,6 @@
 ## Prerequisites
 
-* Install **Windows 10 Insider Preview build 18932** or later
+* Install **Windows 10 Insider Preview build 18975** or later
 * Enable WSL 2 by following [this guide](https://aka.ms/wsl2-install)
 * Install the **Ubuntu 18.04** distribution from the [Microsoft Store](https://www.microsoft.com/en-us/p/ubuntu-1804-lts/9n9tngvndl3q)
 
