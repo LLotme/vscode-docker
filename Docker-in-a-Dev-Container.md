@@ -1,4 +1,4 @@
-VS Code extensions run as either a "Workspace" extension (aka in the dev container) or as a "UI" extension (aka outside the dev container). By default, the Docker extension will run as a "Workspace" extension. Some features (like Intellisense and "Add Docker Files to Workspace") will continue to work with the default environment. Other features (like viewing and managing images or containers) will not work by default. You have a few options to configure the Docker extension in your remote environment.
+VS Code extensions run as either a "Workspace" extension (aka in the dev container) or as a "UI" extension (aka outside the dev container). By default, the Docker extension will run as a "Workspace" extension. Some features (like Intellisense and "Add Docker Files to Workspace") will continue to work whereas others (like viewing and managing images or containers) will not. You have a few options to configure the Docker extension in your remote environment.
 
 ## Option A: Two Instances of VS Code
 
