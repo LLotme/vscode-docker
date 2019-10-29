@@ -27,8 +27,8 @@ Here are the properties available for configuration within `tasks.json` (note th
 | `context` | *Required. The path to the Docker build context. | PATH |
 | `dockerfile` | *Required. The path to the Dockerfile. | `-f` or `--file` |
 | `tag` | *Required. The tag applied to the Docker image. | `-t` or `--tag` |
-| `buildArgs` | Optional. Build arguments applied to the command line. This is a set of key-value pairs. | `--build-arg` |
-| `labels` | Optional. Labels added to the Docker image. This is a set of key-value pairs. | `--label` |
+| `buildArgs` | Optional. Build arguments applied to the command line. This is a list of key-value pairs. | `--build-arg` |
+| `labels` | Optional. Labels added to the Docker image. This is a list of key-value pairs. | `--label` |
 | `target` | Optional. The target in the Dockerfile to build to. | `--target` |
 | `pull` | Optional. Whether or not to pull new base images before building. | `--pull` |
 
@@ -65,9 +65,9 @@ Here are the properties available for configuration within `tasks.json` (note th
 | `image` | *Required. The name (tag) of the image to run. | IMAGE |
 | `command` | Optional. The command to run upon starting the container. | COMMAND [ARG...] |
 | `containerName` | Optional. The name given to the started container. | `--name` |
-| `env` | Optional. Environment variables set in the container. This is a set of key-value pairs. | `-e` or `--env` |
+| `env` | Optional. Environment variables set in the container. This is a list of key-value pairs. | `-e` or `--env` |
 | `envFiles` | Optional. This is a list of `.env` files. | `--env-file` |
-| `labels` | Optional. Labels given to the started container. This is a set of key-value pairs. | `--label` |
+| `labels` | Optional. Labels given to the started container. This is a list of key-value pairs. | `--label` |
 | `network` | Optional. The name of the network to which the container will be connected. | `--network` |
 | `networkAlias` | Optional. The network-scoped alias for the started container. | `--network-alias` |
 | `os` | Optional. Default is `Linux`, the other option is `Windows`. The container operating system used. | N/A |
