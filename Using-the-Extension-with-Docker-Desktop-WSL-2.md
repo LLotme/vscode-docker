@@ -18,16 +18,10 @@ Open **Ubuntu-18.04** and run `$ docker --version` to verify that Docker is corr
 
 ## Configure the extension
 
-Next, force the Docker extension to run in the workspace by adding the following to your settings.
+There are two options for connecting to the Docker daemon in WSL 2.
 
-```json
-"remote.extensionKind": {
-    "ms-azuretools.vscode-docker": "workspace"
-}
-```
-
-If you already have the Docker extension installed open a remote WSL session then click the extension view, select the Docker extension, and click "Install on WSL: Ubuntu-18.04" to install the extension in the workspace.
-
+1. The easiest requires no changes. Simply launch VS Code, and the WSL 2 Docker daemon will be automatically detected and connected to based on `docker context inspect`.
+1. The next option is to use the [Remote - WSL]() extension to connect to a remote WSL session. Once that is done, click the extension view, select the Docker extension, and click "Install on WSL: Ubuntu-18.04" to install the extension in the workspace.
 ![image](https://user-images.githubusercontent.com/1186948/62485726-5dd67000-b772-11e9-831c-7884316be538.png)
 
 Reload the workspace and the Docker extension will be all set to use the Docker engine in WSL 2. 🎉
