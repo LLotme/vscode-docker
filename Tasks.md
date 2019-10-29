@@ -12,11 +12,11 @@ The `docker-build` task enables control over the command used to build the Docke
 TODO
 
 ### Properties
-Here are the properties available for configuration within `tasks.json` (note that required properties may be automatically inferred based on the option for `platform`):
+Here are the properties available for configuration within `tasks.json` (note that *required properties may be automatically inferred based on the option for `platform`):
 
 | Property | Description |
 | --- | --- |
-| `dockerBuild` | Options for controlling the `docker build` command executed ([see below](#dockerBuild-object-properties)). |
+| `dockerBuild` | *Required. Options for controlling the `docker build` command executed ([see below](#dockerBuild-object-properties)). |
 | `platform` | Optional. This determines the platform, e.g. .NET Core or Node.js, and gives hints to automatically determine properties for the above `dockerBuild` option. |
 | `netCore` | Optional. For .NET Core projects, this controls various options ([see below](#netCore-object-properties-docker-build-task)). |
 | `node` | Optional. For Node.js projects, this controls various options ([see below](#node-object-properties-docker-build-task)). |
@@ -24,11 +24,11 @@ Here are the properties available for configuration within `tasks.json` (note th
 #### `dockerBuild` object properties:
 | Property | Description | CLI Equivalent |
 | --- | --- | --- |
-| `buildArgs` | Optional. Build arguments applied to the command line. This is a set of key-value pairs. | `--build-arg` |
-| `context` | *Required. Optional. The path to the Docker build context. | PATH |
+| `context` | *Required. The path to the Docker build context. | PATH |
 | `dockerfile` | *Required. The path to the Dockerfile. | `-f` or `--file` |
-| `labels` | Optional. Labels added to the Docker image. This is a set of key-value pairs. | `--label` |
 | `tag` | *Required. The tag applied to the Docker image. | `-t` or `--tag` |
+| `buildArgs` | Optional. Build arguments applied to the command line. This is a set of key-value pairs. | `--build-arg` |
+| `labels` | Optional. Labels added to the Docker image. This is a set of key-value pairs. | `--label` |
 | `target` | Optional. The target in the Dockerfile to build to. | `--target` |
 | `pull` | Optional. Whether or not to pull new base images before building. | `--pull` |
 
@@ -50,11 +50,11 @@ The `docker-run` task enables control over the command used to run the Docker im
 TODO
 
 ### Properties
-Here are the properties available for configuration within `tasks.json` (note that required properties may be automatically inferred based on the option for `platform`):
+Here are the properties available for configuration within `tasks.json` (note that *required properties may be automatically inferred based on the option for `platform`):
 
 | Property | Description |
 | --- | --- |
-| `dockerRun` | Options for controlling the `docker run` command executed ([see below](#dockerRun-object-properties)). |
+| `dockerRun` | *Required. Options for controlling the `docker run` command executed ([see below](#dockerRun-object-properties)). |
 | `platform` | Optional. This determines the platform, e.g. .NET Core or Node.js, and gives hints to automatically determine properties for the above `dockerRun` option. |
 | `netCore` | Optional. For .NET Core projects, this controls various options ([see below](#netCore-object-properties-docker-run-task)). |
 | `node` | Optional. For Node.js projects, this controls various options ([see below](#node-object-properties-docker-run-task)). |
@@ -62,11 +62,11 @@ Here are the properties available for configuration within `tasks.json` (note th
 #### `dockerRun` object properties:
 | Property | Description | CLI Equivalent |
 | --- | --- | --- |
+| `image` | *Required. The name (tag) of the image to run. | IMAGE |
 | `command` | Optional. The command to run upon starting the container. | COMMAND [ARG...] |
 | `containerName` | Optional. The name given to the started container. | `--name` |
 | `env` | Optional. Environment variables set in the container. This is a set of key-value pairs. | `-e` or `--env` |
 | `envFiles` | Optional. This is a list of `.env` files. | `--env-file` |
-| `image` | *Required. The name (tag) of the image to run. | IMAGE |
 | `labels` | Optional. Labels given to the started container. This is a set of key-value pairs. | `--label` |
 | `network` | Optional. The name of the network to which the container will be connected. | `--network` |
 | `networkAlias` | Optional. The network-scoped alias for the started container. | `--network-alias` |
@@ -78,8 +78,8 @@ Here are the properties available for configuration within `tasks.json` (note th
 #### `ports` object properties:
 | Property | Description |
 | --- | --- |
-| `hostPort` | Optional. The port number bound on the host. |
 | `containerPort` | Required. The port number bound on the container. |
+| `hostPort` | Optional. The port number bound on the host. |
 | `protocol` | Optional. The protocol for the binding (`tcp` or `udp`). |
 
 #### `extraHosts` object properties:
@@ -104,7 +104,7 @@ Here are the properties available for configuration within `tasks.json` (note th
 #### `node` object properties (`docker-run` task):
 | Property | Description |
 | --- | --- |
+| `package` | *Required. The path to the `package.json` file associated with the `docker-run` task. |
 | `enableDebugging` | Optional. Whether or not to enable debugging within the container. |
 | `inspectMode` | Optional. Whether debugging should break immediately upon application start. |
 | `inspectPort` | Optional. The port on which debugging should occur. |
-| `package` | *Required. The path to the `package.json` file associated with the `docker-run` task. |
