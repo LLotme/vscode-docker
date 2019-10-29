@@ -59,8 +59,6 @@ Here are the properties available for configuration within `tasks.json`:
 | `netCore` | Optional. For .NET Core projects, this controls various options (see below). |
 | `node` | Optional. For Node.js projects, this controls various options (see below). |
 
-*Note: Required properties may be automatically inferred based on the option for `platform`.
-
 `dockerRun` object properties:
 | Property | Description |
 | --- | --- |
@@ -110,3 +108,5 @@ Here are the properties available for configuration within `tasks.json`:
 | `inspectMode` | Optional. Whether debugging should break immediately upon application start. |
 | `inspectPort` | Optional. The port on which debugging should occur. |
 | `package` | *Required. The path to the `package.json` file associated with the `docker-run` task. |
+
+*Note: Required properties may be automatically inferred based on the option for `platform`.
