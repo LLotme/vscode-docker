@@ -20,6 +20,9 @@
 ## How to
 
 * [[Troubleshooting]]
+* [[Deploy images to Azure App Service|App-Service]]
+* [[Customize extension behavior|Extension-Properties]]
+* [[Customize container build and execution with tasks|Tasks]]
 * [[Add a new container registry provider|Custom-Container-Registry]]
 * [[Docker extension API|Docker-Extension-API]]
 
