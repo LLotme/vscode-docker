@@ -25,4 +25,5 @@
 * [[Customize container build and execution with tasks|Tasks]]
 * [[Add a new container registry provider|Custom-Container-Registry]]
 * [[Docker extension API|Docker-Extension-API]]
+* [[Connect to a remote Docker daemon over SSH|SSH]]
 
