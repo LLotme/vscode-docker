@@ -1,3 +1,5 @@
+> Note that with 0.9.0, debugging using this method is deprecated in favor of debugging using its new "task" model.
+
 > Note that Windows containers are **not** currently supported, only Linux containers. However, both standard and Alpine .NET Core runtime base images are supported.
 
 ### Prerequisites
