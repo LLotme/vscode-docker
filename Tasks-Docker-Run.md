@@ -1,6 +1,4 @@
-# Docker Run
-
-## Overview
+# Docker Run Task
 
 The `docker-run` task runs (i.e. creates/starts) a Docker container using the Docker command line. The task can be used by itself, or as part of a chain of tasks to debug an application within a Docker container.
 
@@ -28,13 +26,48 @@ While the `docker-run` task can be used to run any Docker image, the extension h
 
 ### .NET Core
 
+For .NET Core images, the `docker-build` task infers the following options:
+
+| Property | Inferred Value |
+| --- | --- |
+| `dockerRun.containerName` | Derived from the base name of the root workspace folder. |
+| `dockerRun.env` | Adds the following environment variables as required: `ASPNETCORE_ENVIRONMENT`, `ASPNETCORE_URLS`, and `DOTNET_USE_POLLING_FILE_WATCHER`. |
+| `dockerRun.image` | The tag from a dependent `docker-build` task (if one exists) or derived from the base name of the root workspace folder. |
+| `dockerRun.labels` | `com.microsoft.created-by=visual-studio-code` |
+| `dockerRun.os` | `Linux` |
+| `dockerRun.volumes` | Adds the following volumes as required: the local application folder, the source folder, the debugger folder, the NuGet package folder, and NuGet fallback folder. |
+
+
+#### Run a .NET Core Docker container with its default platform options
+
+A .NET Core based Docker image can omit the `platform` property and just set the `netCore` object (as `appProject` is a required property). 
+
+```json
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Run .NET Core Image",
+            "type": "docker-run",
+            "netCore": {
+                "appProject": "${workspaceFolder}/project.csproj"
+            }
+        }
+}
+```
 ### Node.js
 
-For Node.js Docker images, the `docker-run` task infers options based on the application's `package.json`.  For example:
+For Node.js Docker images, the `docker-build` task infers the following options:
 
- - The container image is inferred from a dependent `docker-build` task (if specified) or derived from the application package name, itself inferred from the `name` property within `package.json` or the base name of the folder in which it resides.
+| Property | Inferred Value |
+| --- | --- |
+| `dockerRun.command` | Generated from the npm `start` script in the `package.json` (if it exists), else generated from the `main` property in the `package.json`. |
+| `dockerRun.containerName` | Derived from the application package name. |
+| `dockerRun.image` | The tag from a dependent `docker-build` task (if one exists) or derived from the application package name, itself derived from the `name` property within `package.json` or the base name of the folder in which it resides. |
  
 #### Run a Node.js Docker container with its default platform options
+
+A Node.js based Docker image with no specific platform options can just set the `platform` property to `node`.
 
 ```json
 {
@@ -49,6 +82,8 @@ For Node.js Docker images, the `docker-run` task infers options based on the app
 ```
 
 #### Run a Node.js Docker container with Node-specific options
+
+A Node.js based Docker image with platform-specific options can omit the `platform` property and just set the `node` object.
 
 ```json
 {

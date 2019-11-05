@@ -1,6 +1,4 @@
-# Docker Build
-
-## Overview
+# Docker Build Task
 
 The `docker-build` task builds Docker images using the Docker command line. The task can be used by itself, or as part of a chain of tasks to run and/or debug an application within a Docker container.
 
@@ -29,15 +27,46 @@ While the `docker-build` task can be used to build any Docker image, the extensi
 
 ### .NET Core
 
+For .NET Core images, the `docker-build` task infers the following options:
+
+| Property | Inferred Value |
+| --- | --- |
+| `dockerBuild.context` | The root workspace folder. |
+| `dockerBuild.dockerfile` | The file `Dockerfile` in the root workspace folder. |
+| `dockerBuild.labels` | `com.microsoft.created-by=visual-studio-code` |
+| `dockerBuild.tag` | The base name of the root workspace folder. |
+
+#### Build a .NET Core Docker image with its default platform options
+
+A .NET Core based Docker image can omit the `platform` property and just set the `netCore` object (as `appProject` is a required property). 
+
+```json
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build Node Image",
+            "type": "docker-build",
+            "netCore": {
+                "appProject": "${workspaceFolder}/project.csproj"
+            }
+        }
+}
+```
+
 ### Node.js
 
-For Node.js Docker images, the `docker-build` task infers options based on the application's `package.json`.  For example:
+For Node.js Docker images, the `docker-build` task infers the following options:
 
- - The Dockerfile is inferred to be in the same directory as the `package.json`.
- - The Docker build context is inferred to be the same directory as the `package.json`.
- - The Docker image tag is inferred from the application's `name` property in `package.json` (if defined), else the base name of the folder in which `package.json` resides.
+| Property | Inferred Value |
+| --- | --- |
+| `dockerBuild.context` | The same directory in which the `package.json` resides. |
+| `dockerBuild.dockerfile` | The file `Dockerfile` in the same directory as the `package.json` resides. |
+| `dockerBuild.tag` | The application's `name` property in `package.json` (if defined), else the base name of the folder in which `package.json` resides. |
 
 #### Build a Node.js Docker image with its default platform options
+
+A Node.js based Docker image with no specific platform options can just set the `platform` property to `node`.
 
 ```json
 {
@@ -52,6 +81,8 @@ For Node.js Docker images, the `docker-build` task infers options based on the a
 ```
 
 #### Build a Node.js Docker image with Node-specific options
+
+A Node.js based Docker image with platform-specific options can omit the `platform` property and just set the `node` object.
 
 ```json
 {
