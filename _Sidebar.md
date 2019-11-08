@@ -1,21 +1,18 @@
 ## [[Home]]
 
-* [[About Docker extension|Overview]]
+* [[Prerequisites and installation|Installation]]
+* [[Choosing development environment for containers|Choosing-Development-Environment]]
 
 ## Quickstarts
 
-* [[Work with images and containers|Quickstart-Images-Containers]]
-* [[Author Docker files|Quickstart-Docker-Files]]
-* [[Work with container registries|Quickstart-Container-Registries]]
-* [[Debug container application|Quickstart-Debugging]]
+* [[ASP.NET Core|ASP-NET-Core]]
+* [[Node.js|Node-JS]]
+* [[Work with container registries|Work-With-Container-Registries]]
 
 ## Tutorials 
 
-* [[.NET Core|Tutorial-DotNet]]
-* [[Node.js|Tutorial-NodeJS]]
-* [[Docker in a dev container|Tutorial-DevContainer]]
-* [[Docker and Windows Subsystem for Linux (WSL)|Tutorial-WSL]]
-* [[Use Docker extension with a remote machine|Tutorial-Remote-SSH]]
+* [[Multi-service application with Docker Compose|Docker-Compose]]
+* [[Docker and Windows Subsystem for Linux (WSL)|Windows-Subsystem-For-Linux]]
 
 ## How to
 
@@ -23,7 +20,8 @@
 * [[Deploy images to Azure App Service|App-Service]]
 * [[Customize extension behavior|Extension-Properties]]
 * [[Customize container build and execution with tasks|Tasks]]
-* [[Add a new container registry provider|Custom-Container-Registry]]
+* [[Add a new container registry provider|Contribute-a-Registry-Provider]]
 * [[Docker extension API|Docker-Extension-API]]
 * [[Connect to a remote Docker daemon over SSH|SSH]]
+* [[Docker in a dev container|Tutorial-DevContainer]]
 
