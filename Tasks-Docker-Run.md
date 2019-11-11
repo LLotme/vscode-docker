@@ -4,7 +4,7 @@ The `docker-run` task runs (i.e. creates/starts) a Docker container using the Do
 
 ## Configuration
 
-For running general-purpose Docker containers, use the `dockerRun` property to configure the various Docker run options.
+For running arbitrary Docker containers, use the `dockerRun` property to configure any needed Docker run options.
 
 ```json
 {

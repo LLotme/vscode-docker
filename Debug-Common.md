@@ -1,16 +1,22 @@
 # Debugging within Docker Containers
 
-With version 0.9.0, the Docker extension provides more support for debugging applications running within Docker containers, such as scaffolding debug launch configurations for attaching a debugger to those applications running within a container.
+With version 0.9.0, the Docker extension provides more support for debugging applications within Docker containers, such as scaffolding `launch.json` configurations for attaching a debugger to applications running within a container.
+
+The Docker extension provides a `docker` debug configuration provider that manages how VS Code will launch an application and/or attach a debugger to the application in a running Docker container. This provider is configured via entries within `launch.json`, with configuration being specific to each application platform supported by the provider.
 
 ## Platform Support
 
-Debugging within Docker containers is currently supported for both .NET Core and Node.js applications. 
+The Docker extension currently supports debugging .NET Core and Node.js applications within Docker containers. 
 
 ### .NET Core
+
+More information about debugging .NET Core applications within Docker containers can be found [here](Debug-NetCore.md).
 
 > The previous (Preview) .NET Core Docker debugging support is being deprecated. You can still find documentation on that support [here](Debug-NetCore-Deprecated.md).
 
 > Debugging .NET Core applications within Windows Docker containers is not currently supported.
+
+#### Example `launch.json` configuration for debugging a .NET Core application
 
 ```json
 {
@@ -30,6 +36,10 @@ Debugging within Docker containers is currently supported for both .NET Core and
 ```
 
 ### Node.js
+
+More information about debugging Node.js applications within Docker containers can be found [here](Debug-Node.md).
+
+#### Example `launch.json` configuration for debugging a Node.js application
 
 ```json
 {
