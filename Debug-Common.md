@@ -14,8 +14,6 @@ More information about debugging .NET Core applications within Docker containers
 
 > The previous (Preview) .NET Core Docker debugging support is being deprecated. You can still find documentation on that support [here](Debug-NetCore-Deprecated.md).
 
-> Debugging .NET Core applications within Windows Docker containers is not currently supported.
-
 #### Example `launch.json` configuration for debugging a .NET Core application
 
 ```json

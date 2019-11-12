@@ -21,3 +21,5 @@
 1. Select the "Docker .NET Core Launch" launch profile.
 1. Optionally, set a breakpoint.
 1. Start debugging! (<kbd>F5</kbd> by default)
+
+For additional customization options, see the documentation on [Tasks](Tasks-Common.md) and [Debugging](Debug-Common.md).
