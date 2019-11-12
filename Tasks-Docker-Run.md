@@ -107,8 +107,8 @@ Here are the properties available for configuration within `tasks.json` (note th
 | --- | --- |
 | `dockerRun` | *Required. Options for controlling the `docker run` command executed ([see below](#dockerRun-object-properties)). |
 | `platform` | Optional. This determines the platform, e.g. .NET Core or Node.js, and gives hints to automatically determine properties for the above `dockerRun` option. |
-| `netCore` | Optional. For .NET Core projects, this controls various options ([see below](#netCore-object-properties-docker-run-task)). |
-| `node` | Optional. For Node.js projects, this controls various options ([see below](#node-object-properties-docker-run-task)). |
+| `netCore` | Optional. For .NET Core projects, this controls various options ([see below](#netCore-object-properties)). |
+| `node` | Optional. For Node.js projects, this controls various options ([see below](#node-object-properties)). |
 
 ### `dockerRun` object properties:
 
@@ -157,6 +157,7 @@ Here are the properties available for configuration within `tasks.json` (note th
 | --- | --- |
 | `appProject` | *Required. The .NET Core project file (`.csproj`, `.fsproj`, etc.) associated with `docker-run` task. |
 | `configureSsl` | Optional. Whether to configure ASP.NET Core SSL certificates and other settings to enable SSL on the service in the container. |
+| `enableDebugging` | Optional. Whether to enable the started container for debugging. This will infer additional volume mappings and other options necessary for debugging. |
 
 ### `node` object properties:
 

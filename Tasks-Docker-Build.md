@@ -106,8 +106,8 @@ Here are the properties available for configuration within `tasks.json` (note th
 | --- | --- |
 | `dockerBuild` | *Required. Options for controlling the `docker build` command executed ([see below](#dockerBuild-object-properties)). |
 | `platform` | Optional. This determines the platform, e.g. .NET Core or Node.js, and gives hints to automatically determine properties for the above `dockerBuild` option. |
-| `netCore` | Optional. For .NET Core projects, this controls various options ([see below](#netCore-object-properties-docker-build-task)). |
-| `node` | Optional. For Node.js projects, this controls various options ([see below](#node-object-properties-docker-build-task)). |
+| `netCore` | Optional. For .NET Core projects, this controls various options ([see below](#netCore-object-properties)). |
+| `node` | Optional. For Node.js projects, this controls various options ([see below](#node-object-properties)). |
 
 ### `dockerBuild` object properties:
 
