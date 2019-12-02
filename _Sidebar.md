@@ -20,6 +20,16 @@
 * [[Customize container build and execution with tasks|Tasks]]
 * [[Troubleshooting]]
 
+## Reference
+
+* [[Debugging within Containers|Debug-Common]]
+  * [[.NET Core|Debug-NetCore]]
+  * [[Node.js|Debug-Node]]
+
+* [[Docker VS Code Tasks|Tasks-Common]]
+  * [[Build task|Tasks-Docker-Build]]
+  * [[Run task|Tasks-Docker-Run]]
+
 ## Contributing to Docker extension
 
 * [[Add a new container registry provider|Contribute-a-Registry-Provider]]
