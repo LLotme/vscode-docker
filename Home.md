@@ -1,3 +1,5 @@
+> Note: For the 0.9.0 release, we are working on expanding and refining our wiki documentation. If you have questions that are not answered here, please [file an issue](https://github.com/microsoft/vscode-docker/issues/new) so we know what is missing.
+
 The Docker extension makes it easy to build, manage and deploy containerized applications from Visual Studio Code. 
 
 This page provides an overview of the Docker extension capabilities; use the side menu to learn more about topics of interest.
