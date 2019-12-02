@@ -1,0 +1,1 @@
+Maintaining good quality documentation is a priority for the Docker extension team. If you find missing or inaccurate content, or if you'd like to extend the wiki with a topic or tutorial, please let us know [by opening an issue](https://github.com/microsoft/vscode-docker/issues).
