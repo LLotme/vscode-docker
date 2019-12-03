@@ -13,15 +13,12 @@
 ## How to
 
 * [[Choosing development environment for containers|Choosing-Development-Environment]]
-* [[Connect to a remote Docker daemon over SSH|SSH]]
-* [[Docker in a dev container|Docker-In-A-Dev-Container]]
 * [[Deploy images to Azure App Service|App-Service]]
-* [[Customize extension behavior|Extension-Properties]]
-* [[Customize container build and execution with tasks|Tasks]]
-* [[Troubleshooting]]
+* [[Customize extension behavior with properties and tasks|Extension-Properties-And-Tasks]]
 
 ## Reference
 
+* [[Connect to a remote Docker daemon over SSH|SSH]]
 * [[Debugging within Containers|Debug-Common]]
   * [[.NET Core|Debug-NetCore]]
   * [[Node.js|Debug-Node]]
@@ -29,6 +26,8 @@
 * [[Docker VS Code Tasks|Tasks-Common]]
   * [[Build task|Tasks-Docker-Build]]
   * [[Run task|Tasks-Docker-Run]]
+
+* [[Troubleshooting]]
 
 ## Contributing to Docker extension
 
