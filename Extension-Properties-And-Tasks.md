@@ -36,6 +36,7 @@ When building .NET Core-based Docker image, one can omit the `platform` property
                 "appProject": "${workspaceFolder}/project.csproj"
             }
         }
+    ]
 }
 ```
 
@@ -65,6 +66,7 @@ A Node.js based Docker image with no specific platform options can just set the 
             "type": "docker-build",
             "platform": "node"
         }
+    ]
 }
 ```
 
@@ -147,6 +149,7 @@ When building .NET Core-based Docker image, one can omit the `platform` property
                 "appProject": "${workspaceFolder}/project.csproj"
             }
         }
+    ]
 }
 ```
 
@@ -178,6 +181,7 @@ A Node.js based Docker image with no specific platform options can just set the 
             "node": "docker-run",
             "platform": "node"
         }
+    ]
 }
 ```
 
