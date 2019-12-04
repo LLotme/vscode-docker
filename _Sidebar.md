@@ -23,10 +23,6 @@
   * [[.NET Core|Debug-NetCore]]
   * [[Node.js|Debug-Node]]
 
-* [[Docker VS Code Tasks|Tasks-Common]]
-  * [[Build task|Tasks-Docker-Build]]
-  * [[Run task|Tasks-Docker-Run]]
-
 * [[Troubleshooting]]
 
 ## Contributing to Docker extension
