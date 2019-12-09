@@ -59,7 +59,7 @@ An image in an Azure Container Registry can be deployed to Azure App Service dir
 
 ## Debugging services running inside a container
 
-You can debug services build using .NET (C#) and Node.js that are running inside a container. The extension offers custom tasks that help with launching a service under the debugger and with attaching the debugger to a running service instance. For more information see [[Debug container application|Quickstart-Debugging]]  and [[Customize container build and execution with tasks|Tasks]] pages.
+You can debug services build using .NET (C#) and Node.js that are running inside a container. The extension offers custom tasks that help with launching a service under the debugger and with attaching the debugger to a running service instance. For more information see [[Debug container application|Quickstart-Debugging]]  and [[Extension Properties and Tasks|Extension-Properties-And-Tasks]] pages.
 
 ## Azure CLI integration
 
