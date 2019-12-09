@@ -5,9 +5,9 @@ In this guide you will learn how to:
 
 ## Prerequisites
 
-- Docker and the VS Code Docker extension must be installed as described on the [[Home page|Home#prerequisites-and-installation]].
+- Docker and the VS Code Docker extension must be installed as described on the [[Home page|Home#installation]].
 - For .NET development install [.NET Core SDK](https://dotnet.microsoft.com/download). 
-- C# VS Code extension (published my Microsoft).
+- [C# VS Code extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode.csharp).
 
 ## Create a .NET Core Web API project
 
@@ -20,12 +20,12 @@ In this guide you will learn how to:
 ## Add Docker files to the project
 
 1. Open the project folder in VS Code
-1. Open command palette and use `Docker: Add Docker Files to Workspace...` command:
+1. Open Command Palette (`F1`) and use `Docker: Add Docker Files to Workspace...` command:
 
    [[images/quickstart-aspnetcore-add-dotnet.png|alt=Add Dockerfile to a .NET project]]
 
 1. Use `ASP.NET Core` when prompted for application platform.
-1. Choose `Windows` or `Linux` when prompted to choose the operating system. 
+1. Choose `Windows` or `Linux` when prompted to choose the operating system.
     > `Windows` is only applicable if your Docker installation is configured to use Windows containers.
 1. Change the port for application endpoint to `5000`.
 1. `Dockerfile` and `.dockerignore` files are added to the workspace. 
@@ -34,7 +34,7 @@ In this guide you will learn how to:
 
 ## Build the application
 
-1. Open terminal prompt 
+1. Open terminal prompt (<code>Ctrl-`</code>).
 1. Issue `dotnet build` command to build the application:
    ```
    ~/code/scratch/netcorerest$ dotnet build
@@ -50,22 +50,22 @@ In this guide you will learn how to:
    ```
 
 ## Add an environment variable to the image
-Docker extension helps with authoring Docker files by providing completions and contextual help. To illustrate these capabilities you are going to add an environment variable to your service image.
+You can use the Docker extension to author Docker files. The extension provides completions and contextual help. To see these capabilities add an environment variable to your service image by following these:
 
 1. Open the `Dockerfile` file.
 1. Use `ENV` instruction to add an environment variable to the service container image. The instruction should be placed in the `base` stage of the `Dockerfile` (the first stage in the file). Set the `ASPNETCORE_URLS` variable to `http://*:5000`:
 
    [[images/quickstart-aspnetcore-intellisense-env.png|alt=Add an environment variable to Docker image]]
 
-   Note how Docker extension lists all available Dockerfile instructions and describes the syntax.
+   Note how the Docker extension lists all available Dockerfile instructions and describes the syntax.
 
-   > Docker extension uses the `base` stage of the `Dockerfile` to create a debug version of the container image for our service. We place the `ASPNETCORE_URLS` environment variable definition in the `base` stage because we want this variable to be present in both debug and release versions of the container image.   
+   > The Docker extension uses the `base` stage of the `Dockerfile` to create a debug version of the container image for your service. Put the `ASPNETCORE_URLS` environment variable definition in the `base` stage to have this variable available in both debug and release versions of the container image.   
 1. Save the `Dockerfile` file.
 
 
 ## Build the image
 
-1. Open command palette and issue `Docker Images: Build Image...` command.
+1. Open command palette (`F1`) and issue `Docker Images: Build Image...` command.
 1. Open Docker view and verify that the new image is visible in the Images tree:
 
    [[images/quickstart-aspnetcore-verify-image.png|alt=Verify Docker image existence]]
@@ -76,7 +76,7 @@ Docker extension helps with authoring Docker files by providing completions and 
 
    [[images/quickstart-aspnetcore-running-container.png|alt=Running service container]]
 
-1. Open the web browser and navigate to [http://localhost:5000/WeatherForecast](http://localhost:5000/WeatherForecast). You should see several weather record data in JSON format, similar to following:
+1. Open the web browser and navigate to [http://localhost:5000/WeatherForecast](http://localhost:5000/WeatherForecast). You should see weather data in JSON format, similar to following:
 
    ```jsonc
    [
@@ -110,13 +110,13 @@ When Docker files were added to the application, the Docker extension also added
 
 
 1. Start debugging (`F5` key). 
-    - The debug version of the service container being built and started.
-    - The browser will be opened to request a new weather forecast.
-    - The breakpoint in the `WeatherForecastController` class will be hit.
+    - The debug version of the service container builds and starts.
+    - The browser opens to request a new weather forecast.
+    - The breakpoint in the `WeatherForecastController` is hit.
 
-> By default Docker will assign a randomly-chosen **host port** to a port exposed by a container (the **container port**). In our case the exposed (container) port is 5000, but it will be exposed on the host via random port e.g. 32737. 
+> By default Docker will assign a randomly-chosen **host port** to a port exposed by a container (the **container port**). In this case the exposed (container) port is 5000, but it will be exposed on the host via a random port, such as 32737. 
 >
-> You can use specific port on the host by changig the Docker run options used by `docker-run: debug` task (defined in `.vscode/tasks.json` file). For example, if you want to use the same port (5000) to expose the service, the `docker-run: debug` task definition would look like this:
+> You can use specific port on the host by changing the Docker run options used by `docker-run: debug` task (defined in `.vscode/tasks.json` file). For example, if you want to use the same port (5000) to expose the service, the `docker-run: debug` task definition would look like this:
 > ```json
 > {
 >    "type": "docker-run",
