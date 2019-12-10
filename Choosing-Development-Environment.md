@@ -1,29 +1,29 @@
 # Development environment choices
 
-Developing a container-based service can be done using **local environment** or **remote environment**. The local environment is the operating system of your developer workstation; a remote environment can be a remote machine accessible via SSH, a virtual machine running on your developer workstation, or a **development container**.
+You can choose whether to develop a container-based service in the **local environment**, or in a **remote environment**. The local environment is the operating system of your developer workstation; using the local environment means you build and run your service container(s) using Docker installed on your workstation. 
 
-A remote development environment for containers [can have advantages over local environment](https://code.visualstudio.com/docs/remote/remote-overview), the main one being **the ability to use the same operating system for development and for the container**. 
+[A remote development environment](https://code.visualstudio.com/docs/remote/remote-overview) is different from your developer workstation. It can be a remote machine accessible via SSH, a virtual machine running on your developer workstation, or a development container. A remote environment can have advantages over the local environment, the main one being **the ability to use the same operating system during development, and when your service is running in production**. To use a remote environment, you need to ensure that `docker` command (Docker CLI) [is available and functional within that environment](#enabling-docker-cli-inside-a-development-environment).
 
-To use a remote development environment, one needs to ensure that `docker` command (Docker CLI) [is available and functional within the environment](#enabling-docker-cli-inside-a-development-environment).
+The second important choice is whether to debug your service running as a ordinary process, or **debug your service running in a container**.
 
-The second important choice is whether to debug a service running as a process within the development environment, or **debug the service running as a container**.
-
-# Rules of thumb for choosing a development environment
-1. Use **local environment** when you are not particularly concerned about:
+# Guidelines for choosing a development environment
+1. Use the local environment when you are not particularly concerned about:
    - using the same OS for development and inside the service container, nor 
    - installing necessary tools and dependencies on top of your local environment.
 
 1. Consider [development container](https://code.visualstudio.com/docs/remote/containers) first if you need a remote environment.
     - On Windows, [Windows Subsystem for Linux (WSL)](#windows-subsystem-for-linux) is worth considering as an alternative.
 
-1. Debugging a service running in a container is possible, but brings additional complexity. Use normal debugging by default, and debugging in container when you need it. 
+1. Debugging your service running in a container is possible, but brings additional complexity. Use normal debugging by default, and debugging in container when you need it. 
 
 > The Docker extension natively supports container debugging for .NET- and Node.js-based services only.
 
-# Enabling Docker CLI inside a development environment
+# Enabling Docker CLI inside a remote development environment
+
+The way to enable Docker CLI inside a remote development environment varies depending on the type of remote environment you choose.
 
 ## Development container
-The recommended setup is to **redirect the Docker CLI inside the development container to the Docker daemon running on the local machine**.
+For a development container you should **redirect the Docker CLI inside the container to the Docker daemon running on the local machine**.
 
 First, make sure Docker CLI is installed into your development container. Exact steps [depend on Linux distribution the container is using](https://docs.docker.com/install/); here is an example for Ubuntu-based distros (from `.devcontainer/Dockerfile`):
 
@@ -49,7 +49,7 @@ Next, ensure that Docker socket is mapped into the development container (`.devc
 
 ## Windows Subsystem for Linux
 
-Windows Subsystem for Linux represents a great choice for container-based service development on Windows. We strongly recommend the new [Windows Subsystem for Linux version 2 (WSL 2)](https://docs.microsoft.com/windows/wsl/wsl2-index). Docker Desktop for Windows has been updated to work with WSL 2 and it has a graphical setting to enable Docker CLI inside WSL 2 distribution(s):
+Windows Subsystem for Linux represents a great choice for container-based service development on Windows. [Windows Subsystem for Linux version 2 (WSL 2)](https://docs.microsoft.com/windows/wsl/wsl2-index) is strongly recommended. Docker Desktop for Windows has been updated to work with WSL 2 and has a graphical setting to enable Docker CLI inside WSL 2 distribution(s):
 
 [[images/devenv-enable-docker-wsl2.png|alt=Enable Docker inside WSL 2 distribution]]
 
@@ -60,10 +60,10 @@ Windows Subsystem for Linux represents a great choice for container-based servic
 ## Remote machine or virtual machine
 
 #### Docker in Docker
-The simplest way to enable container development with a remote machine is to do [a full Docker installation](https://docs.docker.com/install/) on the machine, including Docker daemon. For a local VM the virtualization software needs to have **nested virtualization** option enabled; it is supported by all mainstream virtualization technologies such as Hyper-V, Parallels or Oracle VirtualBox.
+The simplest way to enable container development with a remote machine is to do [a full Docker installation](https://docs.docker.com/install/) on the machine, including Docker daemon. For a local VM you need to enable **nested virtualization** option in your virtualization software. Nested virtualization is supported by all mainstream virtualization technologies such as Hyper-V, Parallels or Oracle VirtualBox.
 
 #### Reusing the host Docker daemon
-Alternatively, one can install just the Docker CLI inside development environment and point the CLI to the Docker host (daemon) running on the developer workstation using [Docker context mechanism](https://docs.docker.com/engine/context/working-with-contexts/). The main concern with this approach is ensuring network connectivity from the VM to the Docker daemon on the host, **and doing so in a secure way**. One option is to use [[SSH tunelling|SSH]] to developer workstation. Another option is to [make Docker daemon listen on HTTPS port](https://docs.docker.com/engine/security/https/). Both options are considered advanced and outside the scope of this document.
+Alternatively, you can install just the Docker CLI inside development environment and point the CLI to the Docker host (daemon) running on the developer workstation using [Docker context mechanism](https://docs.docker.com/engine/context/working-with-contexts/). The main concern with this approach is to ensure network connectivity from the VM to the Docker daemon on the host, **and to do so in a secure way**. One option is to use [[SSH tunelling|SSH]] to developer workstation. Another option is to [make Docker daemon listen on HTTPS port](https://docs.docker.com/engine/security/https/). Both options are considered advanced and outside the scope of this document.
 
 
 # Debugging in a container
