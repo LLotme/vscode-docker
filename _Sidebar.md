@@ -1,29 +1,10 @@
 ## [[Home]]
 
-## Quickstarts
+## Common Tasks
 
-* [[ASP.NET Core|ASP-NET-Core]]
-* [[Node.js|Node-JS]]
+* [[Using a remote machine over SSH|SSH]]
 
-## Tutorials 
-
-* [[Work with container registries|Work-With-Container-Registries]]
-* [[Multi-service application with Docker Compose|Docker-Compose]]
-
-## How to
-
-* [[Choosing development environment for containers|Choosing-Development-Environment]]
-* [[Deploy images to Azure App Service|App-Service]]
-* [[Customize extension behavior with properties and tasks|Extension-Properties-And-Tasks]]
-
-## Reference
-
-* [[Connect to a remote Docker daemon over SSH|SSH]]
-* [[Debugging within Containers|Debug-Common]]
-  * [[.NET Core|Debug-NetCore]]
-  * [[Node.js|Debug-Node]]
-
-* [[Troubleshooting]]
+## [[Troubleshooting]]
 
 ## Contributing to Docker extension
 

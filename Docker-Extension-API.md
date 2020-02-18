@@ -1,5 +1,5 @@
 
-The following extension commands are supported for programmatic use. If a parameter is not specified, the user will be prompted for the value. You must list 'ms-azuretools.vscode-docker' under the 'extensionDependencies' section of your package.json to ensure these apis are available to your extension.  (**Note: The publisher has changed from "PeterJausovec" to "ms-azuretools".**)
+The following extension commands are supported for programmatic use. If a parameter is not specified, the user will be prompted for the value. You must list 'ms-azuretools.vscode-docker' under the 'extensionDependencies' section of your package.json to ensure these apis are available to your extension.
 
 > NOTE: The docker extension is still in preview and the APIs are subject to change.
 
