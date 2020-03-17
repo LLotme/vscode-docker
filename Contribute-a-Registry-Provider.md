@@ -22,3 +22,5 @@ If the "Generic Docker Registry" support is not sufficient, follow these steps t
         1. Add a new folder in `src/tree/registries` for your provider
         1. Create an `IRegistryProvider` in your new folder, implementing all required fields, and add it to the list in `src/tree/registries/all/getRegistryProviders.ts`
 1. **Submit a PR!**
+
+If you feel that framework changes are needed in order to support your registry provider contribution, please let us know.
