@@ -8,4 +8,4 @@ This feature has the following limitations:
 
 ## Contribute a Registry Provider
 
-We are working on a better extensibility model for contributing registry providers. We'll have more information soon.
+We have a proposal for a better registry extensibility model [here](https://github.com/microsoft/vscode-docker/issues/2033). We'd love to hear your feedback on it!
