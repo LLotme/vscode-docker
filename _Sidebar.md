@@ -9,4 +9,3 @@
 ## Contributing to Docker extension
 
 * [[Add a new container registry provider|Contribute-a-Registry-Provider]]
-* [[Docker extension API|Docker-Extension-API]]
