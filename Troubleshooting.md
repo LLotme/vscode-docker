@@ -18,5 +18,5 @@ When using our tools, your docker host URL needs to follow a specific syntax to 
 If you do not want to change your `docker.host` attribute from `settings.json` of your workspace folder, which overrides the DOCKER_HOST environment variable, you can change the env var from the command line (OS specific). 
 For example, ***In Powershell you can change your docker environment variable with `$ENV:DOCKER_HOST = 'newVar'`***
 
-Important Note: The `docker.host` attribute in `settings.json` overrides any `DOCKER_HOST` env variable on your PC.
+> Important Note: The `docker.host` attribute in `settings.json` overrides any `DOCKER_HOST` env variable on your PC.
 Provide a few examples...
