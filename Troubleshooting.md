@@ -22,7 +22,7 @@ To change your `docker.host` attribute:
 
 If you do not want to change your `docker.host` attribute within `settings.json` of VS Code, **which overrides the DOCKER_HOST environment variable on your PC**, you can change the environment variable from the command line (OS specific). 
 
-For example, ***In Powershell you can change your docker environment variable with `$ENV:DOCKER_HOST = 'ssh://username@1.2.3.4'`***
+For example, In Powershell you can change your docker environment variable with `$ENV:DOCKER_HOST = 'ssh://username@1.2.3.4'`
 
 We recommend removing the docker.host attribute altogether and creating a context to connect to. However, before creating a context, **make sure to delete or clear your DOCKER_HOST environment variable from your PC**.
 
