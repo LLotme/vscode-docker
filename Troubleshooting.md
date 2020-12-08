@@ -13,7 +13,7 @@ This is most likely caused by a conflict with another extension called `Docker E
 
 ### Invalid URL Errors
 
-When using our tools, your Docker Host URL needs to use a complete URL to work with our Extension. Depending on your server's protocol, you need to prepend your protocol explicity with ssh, tcp, or other (e.g ssh://myuser@12.3.4 or tcp://1.2.3.4). This issue is common because generally the Docker CLI accepts a `DOCKER_HOST` environment variable URL without needing a prepended protocol. From VS Code, you may either set your Docker Host URL with the `docker.host` attribute in `settings.json` or by setting the `DOCKER_HOST` environment variable from the command line. These errors mainly affect Node users.
+When using our tools, your Docker Host URL needs to use a complete URL to work with our Extension. Depending on your server's protocol, you need to prepend your protocol explicity with ssh, tcp, or other (e.g ssh://myuser@12.3.4 or tcp://1.2.3.4). This issue arises because the Docker CLI generally uses a `DOCKER_HOST` environment variable to connect to your Docker daemon without needing a prepended protocol. To fix this issue in VS Code, you can set your Docker Host URL with the `docker.host` attribute in `settings.json`. Otherwise, you can set the `DOCKER_HOST` environment variable from the command line. These errors mainly affect Node users.
 
 To change your `docker.host` attribute: 
 1. Type `Ctrl` and `,` or select File > Preferences > Settings
@@ -22,8 +22,8 @@ To change your `docker.host` attribute:
 
 If you do not want to change your `docker.host` attribute within `settings.json` of VS Code, **which overrides the DOCKER_HOST environment variable on your PC**, you can change the environment variable from the command line (OS specific). 
 
-For example, In Powershell you can change your docker environment variable with `$ENV:DOCKER_HOST = 'ssh://username@1.2.3.4'`
+For example, in Powershell you can change your docker environment variable with `$ENV:DOCKER_HOST = 'ssh://username@1.2.3.4'`
 
-We recommend removing the docker.host attribute altogether and creating a context to connect to. However, before creating a context, **make sure to delete or clear your DOCKER_HOST environment variable from your PC**.
+We recommend removing the docker.host attribute altogether and instead creating a context to connect to. However, before creating a context, **make sure to delete or clear your DOCKER_HOST environment variable from your PC** (OS specific).
 
-Check out this guide to learn more about [working with contexts](https://docs.docker.com/engine/context/working-with-contexts/) to communicate with your docker daemon. 
+Check out this guide to learn how to [create and use a context](https://docs.docker.com/engine/context/working-with-contexts/) to communicate with your Docker daemon. 
