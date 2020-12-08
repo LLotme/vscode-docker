@@ -26,4 +26,4 @@ For example, ***In Powershell you can change your docker environment variable wi
 
 We recommend removing the docker.host attribute altogether and creating a context to connect to. However, before creating a context, **make sure to delete or clear your DOCKER_HOST environment variable from your PC**.
 
-Check out this guide to learn more about (working with contexts)[https://docs.docker.com/engine/context/working-with-contexts/] to communicate with your docker daemon. 
+Check out this guide to learn more about [working with contexts](https://docs.docker.com/engine/context/working-with-contexts/) to communicate with your docker daemon. 
