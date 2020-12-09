@@ -13,6 +13,7 @@ This is most likely caused by a conflict with another extension called `Docker E
 
 ### Invalid URL Errors
 If you have a need to connect to a remote Docker daemon, we highly recommend using Docker contexts instead of a `docker.host` attribute in the settings. Check out this guide to learn how to [create and use a context](https://docs.docker.com/engine/context/working-with-contexts/) to communicate with a remote Docker daemon. 
+
 If you still need to override the Docker context you are currently using, make sure your `DOCKER_HOST` environment variable or `docker.host` attribute includes a protocol in the URL (e.g ssh://myuser@mymachine or tcp://1.2.3.4).
 
 > **Important Note:** Keep in mind that your `docker.host` attribute will override your Docker context and the `DOCKER_HOST` environment variable will override both the `docker.host` attribute and your Docker context.
