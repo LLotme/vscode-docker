@@ -9,7 +9,7 @@ This is most likely caused by a conflict with another extension called `Docker E
 ### The extension does not find Docker on a remote machine ("Failed to connect. Is Docker installed and running?" error)
 
 1. Make sure Docker engine **is installed** on the remote machine and that Docker CLI works (do `docker ps` and ensure it does not return any errors).
-2. Verify that Docker extension is installed on the remote machine. As of February 2020 [there is a bug in VS Code](https://github.com/microsoft/vscode/issues/83675) that prevents the Docker extension to be installed remotely if it is already installed locally. This bug is scheduled to be fixed in VS Code 1.43 release. A workaround to get the extension installed remotely [is described here](https://github.com/microsoft/vscode-docker/issues/1582#issuecomment-578882428).
+2. If using a remote development environment (remote machine via SSH, WSL subsystem, GitHub Codespace), ensure that Docker extension is installed remotely in addition to being installed locally. 
 
 ### Invalid URL Errors
 
