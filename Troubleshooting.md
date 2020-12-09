@@ -12,18 +12,10 @@ This is most likely caused by a conflict with another extension called `Docker E
 2. If using a remote development environment (remote machine via SSH, WSL subsystem, GitHub Codespace), ensure that Docker extension is installed remotely in addition to being installed locally. 
 
 ### Invalid URL Errors
+If you have a need to connect to a remote Docker daemon, we highly recommend using Docker contexts instead of a `docker.host` attribute in the settings. Check out this guide to learn how to [create and use a context](https://docs.docker.com/engine/context/working-with-contexts/) to communicate with a remote Docker daemon. 
+If you still need to override the Docker context you are currently using, make sure your `DOCKER_HOST` environment variable or `docker.host` attribute includes a protocol in the URL (e.g ssh://myuser@mymachine or tcp://1.2.3.4).
 
-When using our tools, your Docker Host URL needs to use a complete URL to work with our Extension. Depending on your server's protocol, you need to prepend your protocol explicity with ssh, tcp, or other (e.g ssh://myuser@12.3.4 or tcp://1.2.3.4). This issue arises because the Docker CLI generally uses a `DOCKER_HOST` environment variable to connect to your Docker daemon without needing a prepended protocol. To fix this issue in VS Code, you can set your Docker Host URL with the `docker.host` attribute in `settings.json`. Otherwise, you can set the `DOCKER_HOST` environment variable from the command line. These errors mainly affect Node users.
+> **Important Note:** Keep in mind that your `docker.host` attribute will override your Docker context and the `DOCKER_HOST` environment variable will override both the `docker.host` attribute and your Docker context.
 
-To change your `docker.host` attribute: 
-1. Type `Ctrl` and `,` or select File > Preferences > Settings
-1. Search for "docker.host"
-1. Enter your Docker Host URL with a prepended protocol
+> Tip: In Powershell you can change your docker environment variable with `$ENV:DOCKER_HOST = 'ssh://username@1.2.3.4'`
 
-If you do not want to change your `docker.host` attribute within `settings.json` of VS Code, **which overrides the DOCKER_HOST environment variable on your PC**, you can change the environment variable from the command line (OS specific). 
-
-For example, in Powershell you can change your docker environment variable with `$ENV:DOCKER_HOST = 'ssh://username@1.2.3.4'`
-
-We recommend removing the docker.host attribute altogether and instead creating a context to connect to. However, before creating a context, **make sure to delete or clear your DOCKER_HOST environment variable from your PC** (OS specific).
-
-Check out this guide to learn how to [create and use a context](https://docs.docker.com/engine/context/working-with-contexts/) to communicate with your Docker daemon. 
