@@ -3012,6 +3012,6 @@
         "tar": "^6.2.1",
         "vscode-languageclient": "^8.1.0",
         "vscode-tas-client": "^0.1.75",
-        "xml2js": "^0.5.0"
+        "xml2js": "^0.6.2"
     }
 }
