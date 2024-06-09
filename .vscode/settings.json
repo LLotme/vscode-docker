@@ -19,4 +19,7 @@
         "main",
         "rel/*"
     ],
+    "githubPullRequests.ignoredPullRequestBranches": [
+        "main"
+    ],
 }
