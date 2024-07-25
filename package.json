@@ -2998,7 +2998,7 @@
         "@azure/storage-blob": "^12.23.0",
         "@microsoft/compose-language-service": "^0.2.0",
         "@microsoft/vscode-azext-azureappservice": "~3.3.0",
-        "@microsoft/vscode-azext-azureauth": "^2.3.0",
+        "@microsoft/vscode-azext-azureauth": "^2.4.1",
         "@microsoft/vscode-azext-azureutils": "^3.0.1",
         "@microsoft/vscode-azext-utils": "^2.5.0",
         "@microsoft/vscode-container-client": "^0.1.1",
