@@ -2995,7 +2995,7 @@
     "dependencies": {
         "@azure/arm-authorization": "^9.0.0",
         "@azure/arm-containerregistry": "^10.1.0",
-        "@azure/storage-blob": "^12.23.0",
+        "@azure/storage-blob": "^12.24.0",
         "@microsoft/compose-language-service": "^0.2.0",
         "@microsoft/vscode-azext-azureappservice": "~3.3.0",
         "@microsoft/vscode-azext-azureauth": "^2.4.1",
